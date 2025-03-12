@@ -2,6 +2,7 @@ import { defineConfig } from '@lynx-js/rspeedy'
 
 import { pluginQRCode } from '@lynx-js/qrcode-rsbuild-plugin'
 import { pluginReactLynx } from '@lynx-js/react-rsbuild-plugin'
+import { withZephyr } from 'zephyr-rspack-plugin';
 
 export default defineConfig({
   plugins: [
@@ -13,4 +14,10 @@ export default defineConfig({
     }),
     pluginReactLynx(),
   ],
+  tools: {
+    async rspack(config, { appendPlugins }) {
+      config = await withZephyr()(config);
+      return config;
+    },
+  },
 })

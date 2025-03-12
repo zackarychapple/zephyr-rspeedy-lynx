@@ -32,7 +32,7 @@ export function App() {
         </view>
         <view className='Content'>
           <image src={arrow} className='Arrow' />
-          <text className='Description'>Tap the logo and have fun!</text>
+          <text className='Description'>Tap the logo and have too much fun!</text>
           <text className='Hint'>
             Edit<text style={{ fontStyle: 'italic' }}>{' src/App.tsx '}</text>
             to see updates!
